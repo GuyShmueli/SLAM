@@ -5,13 +5,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def cov_nextKF_to_currKF(kf_0, kf_k, marginals):
+def cov_nextKF_to_currKF(kf_0, kf_1, marginals):
     """ Return the 6 x 6 covariance of the relative pose  c0 <- ck, by:
-      1. Get the joint 12 × 12 covariance of (pose₀, pose_k).
+      1. Get the joint 12 × 12 covariance of (pose_0, pose_k).
       2. Invert it to information form.
       3. Slice out the conditioned block Cov(ck | c0) and invert back. """
     c_kf0 = gtsam.symbol('c', kf_0)
-    c_kf1 = gtsam.symbol('c', kf_k)
+    c_kf1 = gtsam.symbol('c', kf_1)
     keys = gtsam.KeyVector()
     keys.append(c_kf0)
     keys.append(c_kf1)
@@ -23,10 +23,10 @@ def cov_nextKF_to_currKF(kf_0, kf_k, marginals):
     return cov_kf1_cond_kf0
 
 
-def pose_nextF_to_currKF(kf_0, kf_k, values):
-    """ Compute the relative pose  c0 <- ck  from two global poses in `values`. """
+def pose_nextF_to_currKF(kf_0, kf_1, values):
+    """ Compute the relative pose  c0 <- ck  from two global poses in 'values'. """
     c_kf0 = gtsam.symbol('c', kf_0)
-    c_kf1 = gtsam.symbol('c', kf_k)
+    c_kf1 = gtsam.symbol('c', kf_1)
     pose_kf0 = values.atPose3(c_kf0)
     pose_kf1 = values.atPose3(c_kf1)
     # c_KF0  <-  c_KF1
@@ -154,7 +154,6 @@ def main(BA_PATH="all_bundles.pkl"):
 
 
     ## Derive relative poses & covariances for EVERY KF pair
-    # Marginals for every KF pair
     marginals = [gtsam.Marginals(graph, val) for (graph, val) in zip(graphs, result_bundles)]
     KF_idx_pairs = [(KF_indices[i], KF_indices[i + 1]) for i in range(len(KF_indices) - 1)]
     # Covariances for every KF pair
