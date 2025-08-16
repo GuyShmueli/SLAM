@@ -274,8 +274,6 @@ The code is split into classes, found in sub-directories. *(PDF p.9)*
 
 ## Section 3: Performance Analysis
 
-> **Note:** I have implemented the code for all the plots, but the guidelines asked for substantial subset of them and restricted the project to 20 pages, so I didn’t present all the plots in the project. *(PDF p.10)*
-
 ### 3.1 Tracking Statistics
 - Total number of tracks: **204,432**.  
 - Number of frames: **2,600**.  
@@ -286,6 +284,8 @@ The code is split into classes, found in sub-directories. *(PDF p.9)*
 
 #### Track Length Histogram *(Figure 3.2.1 — PDF p.10)*
 Longevity of feature tracks (detection + matching + linking) across the whole sequence. `slam.backend.tracking.database` line **552**.
+
+![alt text](image.png)
 
 **What it shows:** To present the data in a meaningful way, the y-axis is logarithmic scaled due to the large ratio between \#short tracks / \#long tracks.
 
