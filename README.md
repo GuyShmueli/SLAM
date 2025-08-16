@@ -285,7 +285,7 @@ The code is split into classes, found in sub-directories. *(PDF p.9)*
 #### Track Length Histogram *(Figure 3.2.1 — PDF p.10)*
 Longevity of feature tracks (detection + matching + linking) across the whole sequence. `slam.backend.tracking.database` line **552**.
 
-![alt text](readme_assets\track_histogram.jpg)
+<img src="readme_assets\track_histogram.jpg" style="width:40%;">
 
 **What it shows:** To present the data in a meaningful way, the y-axis is logarithmic scaled due to the large ratio between \#short tracks / \#long tracks.
 
