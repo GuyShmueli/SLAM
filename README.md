@@ -408,31 +408,48 @@ $$
 
 This metric is axis-agnostic (not yaw/pitch/roll separately). The behavior is similar to the Euclidean absolute position error.
 
-#### PnP, BA and LC Relative Position Error *(Figure 3.3.3 — PDF p.15)*
+#### PnP, BA and LC Relative Position Error
 Error of the relative translation between consecutive keyframes. `slam.analysis.optimizers_analysis` line **46**.
 
-**What is plotted & how it’s computed:** For each adjacent keyframe pair $(k \to k+1)$, compare the estimated relative translation $t^{\text{est}}_{k \to k+1}$ with the ground-truth relative translation $t^{\text{gt}}_{k \to k+1}$ and plot:
 
+
+**What is plotted & how it’s computed:** For each adjacent keyframe pair $(k \to k+1)$, compare the estimated relative translation $t^{\text{est}}_{k \to k+1}$ with the ground-truth relative translation $t^{\text{gt}}_{k \to k+1}$ and plot:
+<figure>
+  <img src="readme_assets/rel_position_error.jpg" style="width:80%;">
+  <figcaption><strong>Figure 3.3.3.</strong> Error of the relative translation between consecutive keyframes.</figcaption>
+</figure>   
+<br><br>
 
 $$
 e^{\text{rel pos}}_k = \left\| t^{\text{est}}_{k \to k+1} - t^{\text{gt}}_{k \to k+1} \right\| \; [\mathrm{m}].
 $$
 
 
-
 **What it shows:** All three curves (PnP/BA/LC) closely overlap: most errors are ~0.1–0.3 m, with a few spikes up to ~0.6 m. BA and LC make only small changes to this local metric.
 
 **What it demonstrates:** Relative inter-KF motion is already well constrained by stereo + PnP conditions over the distance of a single window. BA and LC mainly correct global drift rather than these local edges.
 
-#### PnP, BA and LC Relative Orientation Error *(Figure 3.3.4 — PDF p.16)*
+#### PnP, BA and LC Relative Orientation Error
 Error of the relative orientation between consecutive keyframes. `slam.analysis.optimizers_analysis` line **68**.
+<figure>
+  <img src="readme_assets/rel_orientation_error.jpg" style="width:80%;">
+  <figcaption><strong>Figure 3.3.4.</strong> Error of the relative translation between consecutive keyframes.</figcaption>
+</figure>   
+<br><br>
 
 The behavior is similar to the relative translation error, there is only a minimal improvement after performing BA due to the reasons mentioned above.
 
 ### 3.4 BA-specific Plots
 
-#### Optimization Error (Mean & Median) *(Figure 3.4.1 — PDF p.16–17)*
+#### Optimization Error (Mean & Median)
 For each sliding BA window, the average (top) and median (bottom) factor error of the graph before (blue) and after (orange) optimization. `slam.analysis.ba_plot` lines **101** (mean) & **113** (median).
+<figure>
+  <img src="readme_assets/mean_error_factor_before_and_after_ba.jpg" style="width:80%;">
+  <img src="readme_assets/median_error_factor_before_and_after_ba.jpg" style="width:80%;">  
+  <figcaption><strong>Figure 3.4.1.</strong> For each sliding BA window, the average (top) and median (bottom) factor error of the graph before (blue) and after (orange) optimization.</figcaption>
+</figure>   
+<br><br>
+
 
 **What’s plotted & how it’s computed:**  
 For a factor graph $G$, with factors $f_i$ and current values $\theta$ we define the total graph error:
@@ -451,11 +468,15 @@ As expected, in both graphs the results after BA optimization are better than be
 
 ### 3.5 LC-specific Plots
 
-#### Number of matches & Inlier percentage per successful loop-closure frame *(Figure 3.5.1 — PDF p.17)*
-For every current frame that produced a successful loop, present the \#matches (top), and the \%inliers (bottom) passed the RANSAC-PnP test. `slam.analysis.lc_plot` line **15**.
-
-#### LC Uncertainties Plots *(Figure 3.5.2 — PDF p.18)*
+#### LC Uncertainties Plots
 **Location (top) & Angle (bottom) Uncertainties vs. Keyframe.** For each keyframe we plot the 1σ size of the translation uncertainty ellipsoid from the pose marginal (the 3×3 translation/rotation block of the 6×6 Pose3 covariance), **without LC** (orange) and **with LC** (blue). `slam.analysis.optimizers_analysis` line **133** (location) & **155** (angle).
+<figure>
+  <img src="readme_assets/lc_position_uncertainty.jpg" style="width:80%;">
+  <img src="readme_assets/lc_angle_uncertainty.jpg" style="width:80%;">  
+  <figcaption><strong>Figure 3.5.1.</strong> Location (top) & Angle (bottom) Uncertainties vs. Keyframe For each keyframe we plot the 1σ size of the translation uncertainty ellipsoid from the pose marginal (the 3x3 translation/rotation block of the 6x6 Pose3 covariance), without LC (orange) and with LC (blue).</figcaption>
+</figure>   
+<br><br>
+
 
 I chose the metric $\det(\Sigma)^{1/6}$ because it converts the covariance determinant into an average standard-deviation scale ($\sigma_1^2 \sigma_2^2 \sigma_3^2$ has units of m$^6$ when talking about translation, or deg$^6$ when talking about rotation). Without loops, both translation and rotation uncertainties grow steadily along the trajectory. With loops, the angular curve stays almost flat, and the translation curve stays consistently lower and shows sharp drops right after loop events.
 
