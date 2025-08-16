@@ -483,7 +483,7 @@ I chose the metric $\det(\Sigma)^{1/6}$ because it converts the covariance deter
 #### Per-frame uncertainty score
 Per-frame uncertainty score, plotted on a $\log_{10}$ scale, to present trends more clearly. The BA curve drifts upward over time (uncertainty accumulates), while the LC curve stays lower and shows distinct drops right after loop events. `slam.analysis.optimizers_analysis` line **178**.
 <figure>
-  <img src="readme_assets/lc_uncertainty_score.jpg" style="width:80%;">
+  <img src="readme_assets/lc_uncertainty_score.jpg" style="width:60%;">
   <figcaption><strong>Figure 3.5.2.</strong> Per-frame uncertainty score, plotted on a log10 scale, to present trends more clearly. The BA curve drifts upward over time (uncertainty accumulates), while the LC curve stays lower and shows distinct drops right after loop events.</figcaption>
 </figure>   
 <br><br>
@@ -493,7 +493,7 @@ Per-frame uncertainty score, plotted on a $\log_{10}$ scale, to present trends m
 #### Bird eye view of PnP, BA and LC estimation, including the GT for comparison
 Top-down path (X lateral vs Z forward) of the estimated trajectory at three stages: **PnP (red)**, **after local BA (blue)**, and **after LC (green)** overlaid on ground-truth (black dashed). `slam.utils.utils` line **144**.
 <figure>
-  <img src="readme_assets/lc_uncertainty_score.jpg" style="width:80%;">
+  <img src="readme_assets/trajectory_overlay.jpg" style="width:80%;">
   <figcaption><strong>Figure 3.6.1.</strong> Top-down path (X lateral vs Z forward) of the estimated trajectory at three stages: PnP (red), after local BA (blue), and after LC (green) overlaid on ground-truth (black dashed).</figcaption>
 </figure>   
 <br><br>
