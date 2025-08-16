@@ -480,13 +480,23 @@ As expected, in both graphs the results after BA optimization are better than be
 
 I chose the metric $\det(\Sigma)^{1/6}$ because it converts the covariance determinant into an average standard-deviation scale ($\sigma_1^2 \sigma_2^2 \sigma_3^2$ has units of m$^6$ when talking about translation, or deg$^6$ when talking about rotation). Without loops, both translation and rotation uncertainties grow steadily along the trajectory. With loops, the angular curve stays almost flat, and the translation curve stays consistently lower and shows sharp drops right after loop events.
 
-#### Per-frame uncertainty score *(Figure 3.5.3 — PDF p.19)*
+#### Per-frame uncertainty score
 Per-frame uncertainty score, plotted on a $\log_{10}$ scale, to present trends more clearly. The BA curve drifts upward over time (uncertainty accumulates), while the LC curve stays lower and shows distinct drops right after loop events. `slam.analysis.optimizers_analysis` line **178**.
+<figure>
+  <img src="readme_assets/lc_uncertainty_score.jpg" style="width:80%;">
+  <figcaption><strong>Figure 3.5.2.</strong> Per-frame uncertainty score, plotted on a log10 scale, to present trends more clearly. The BA curve drifts upward over time (uncertainty accumulates), while the LC curve stays lower and shows distinct drops right after loop events.</figcaption>
+</figure>   
+<br><br>
 
 ### 3.6 The trajectory
 
-#### Bird eye view of PnP, BA and LC estimation, including the GT for comparison *(Figure 3.6.1 — PDF p.19)*
+#### Bird eye view of PnP, BA and LC estimation, including the GT for comparison
 Top-down path (X lateral vs Z forward) of the estimated trajectory at three stages: **PnP (red)**, **after local BA (blue)**, and **after LC (green)** overlaid on ground-truth (black dashed). `slam.utils.utils` line **144**.
+<figure>
+  <img src="readme_assets/lc_uncertainty_score.jpg" style="width:80%;">
+  <figcaption><strong>Figure 3.6.1.</strong> Top-down path (X lateral vs Z forward) of the estimated trajectory at three stages: PnP (red), after local BA (blue), and after LC (green) overlaid on ground-truth (black dashed).</figcaption>
+</figure>   
+<br><br>
 
 **Reading the plot:**
 - **PnP (RMSE 27.00 m):** noticeable forward-axis drift, and the closing segments don’t meet the start (classic accumulated error).
@@ -498,11 +508,18 @@ Clear, staged improvement: **PnP → BA** removes local inconsistency, **BA → 
 
 ---
 
-## Section 4: Extra – SuperPoint and SuperGlue *(PDF p.20)*
+## Section 4: Extra – SuperPoint and SuperGlue
 
 I replaced the feature extraction **AKAZE** algorithm with **SuperPoint (“SP”)** neural‑network, and the matcher with **SuperGlue (“SG”)**. Here are some key results:
 
-*(Figure 4.1 — PDF p.20):* Presenting the corresponding figures when SP and SG were used instead of the classical extractor and matcher.
+Presenting the corresponding figures when SP and SG were used instead of the classical extractor and matcher.
+<figure>
+  <img src="readme_assets/inliers_per_frame_sp_sg.jpg" style="width:80%;">
+  <img src="readme_assets/trajectory_overlay_sp_sg.jpg" style="width:80%;">  
+  <figcaption><strong>Figure 4.1.</strong> Presenting the corresponding figures when SP and SG were used instead of the classical extractor and matcher.</figcaption>
+</figure>   
+<br><br>
+
 
 The consistently higher PnP inlier fraction indicates fewer erroneous matches and better geometric consistency frame-to-frame. That gives PnP a stronger motion prior and helps stabilise tracking through low-texture or viewpoint-change segments.
 
