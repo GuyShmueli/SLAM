@@ -363,8 +363,16 @@ PnP reprojection error (L2 pixels) as a function of temporal distance from a ref
 
 ### 3.3 PnP, BA and LC Comparison Plots
 
-#### PnP, BA and LC Absolute Position Error (with respect to KITTI’s ground-truth) *(Figure 3.3.1 — PDF p.13–14)*
+#### PnP, BA and LC Absolute Position Error (with respect to KITTI’s ground-truth)
 Per-frame absolute position error (in meters) after PnP (top), BA (middle) and LC (bottom), decomposed into x, y, z and Euclidean norm. The PnP function is in `slam.analysis.pnp_plot` line **91**, while the BA/LC in `slam.analysis.optimizers_analysis` line **31**.
+<figure>
+  <img src="readme_assets/pnp_abs_error.jpg" style="width:60%;">
+  <img src="readme_assets/ba_abs_error.jpg" style="width:60%;">
+  <img src="readme_assets/lc_abs_error.jpg" style="width:60%;">
+  <figcaption><strong>Figure 3.2.5.</strong> PnP reprojection error (L2 pixels) as a function of temporal distance from a reference frame (an arbitrary track of length 40 was chosen), plotted for the left/right cameras separately.</figcaption>
+</figure>    
+
+
 
 **What’s plotted & how it’s computed:**  
 For each frame $i$, compare the estimated camera center $C^{\text{est}}_i$ to the KITTI ground-truth center $C^{\text{gt}}_i$ in the world frame and report the component-wise absolute translation errors $\lVert e_{x,i} \rVert, \lVert e_{y,i} \rVert, \lVert e_{z,i} \rVert$ and the Euclidean norm $\lVert e_i \rVert$, where $e_i = C^{\text{est}}_i - C^{\text{gt}}_i$ (meters).
