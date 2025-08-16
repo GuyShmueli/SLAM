@@ -286,7 +286,7 @@ The code is split into classes, found in sub-directories. *(PDF p.9)*
 Longevity of feature tracks (detection + matching + linking) across the whole sequence. `slam.backend.tracking.database` line **552**.
 
 <figure>
-  <img src="readme_assets/track_histogram.jpg" style="width:60%;">
+  <img src="readme_assets/track_histogram.jpg" style="width:80%;">
   <figcaption><strong>Figure 3.2.1.</strong> Longevity of feature tracks (detection + matching + linking) across the whole sequence.</figcaption>
 </figure>  
 <br><br>
@@ -303,7 +303,7 @@ Longevity of feature tracks (detection + matching + linking) across the whole se
 A connectivity graph presenting the number of tracks on the frame with links also in the next frame. The horizontal line is the mean. `slam.backend.tracking.database` line **568**.
 
 <figure>
-  <img src="readme_assets/connectivity.jpg" style="width:60%;">
+  <img src="readme_assets/connectivity.jpg" style="width:80%;">
   <figcaption><strong>Figure 3.2.2.</strong> A connectivity graph presenting the number of tracks on the frame with links also in the next frame. The horizontal line is the mean.</figcaption>
 </figure>    
 <br><br>
@@ -319,7 +319,7 @@ A connectivity graph presenting the number of tracks on the frame with links als
 #### Number of matches per Frame
 Number of frame-to-frame matches before applying any geometrical outlier filtering. `slam.backend.tracking.fill_database` line **262**.
 <figure>
-  <img src="readme_assets/matches_per_frame.jpg" style="width:60%;">
+  <img src="readme_assets/matches_per_frame.jpg" style="width:80%;">
   <figcaption><strong>Figure 3.2.3.</strong> Number of frame-to-frame matches before applying any geometrical outlier filtering.</figcaption>
 </figure>    
 <br><br>
@@ -333,7 +333,7 @@ Number of frame-to-frame matches before applying any geometrical outlier filteri
 #### Percentage of PnP Inliers per Frame
 PnP inlier percentage per frame. `slam.backend.tracking.fill_database` line **262**.
 <figure>
-  <img src="readme_assets/inliers_per_frame.jpg" style="width:60%;">
+  <img src="readme_assets/inliers_per_frame.jpg" style="width:80%;">
   <figcaption><strong>Figure 3.2.4.</strong> PnP inlier percentage per frame.</figcaption>
 </figure>    
 <br><br>
@@ -351,7 +351,7 @@ II. RANSAC-PnP (as explained in 1.3.2).
 #### PnP Reprojection Error vs. Distance from Reference
 PnP reprojection error (L2 pixels) as a function of temporal distance from a reference frame (an arbitrary track of length 40 was chosen), plotted for the left/right cameras separately. `slam.analysis.pnp_plot` line **72**.
 <figure>
-  <img src="readme_assets/inliers_per_frame.jpg" style="width:60%;">
+  <img src="readme_assets/inliers_per_frame.jpg" style="width:80%;">
   <figcaption><strong>Figure 3.2.5.</strong> PnP reprojection error (L2 pixels) as a function of temporal distance from a reference frame (an arbitrary track of length 40 was chosen), plotted for the left/right cameras separately.</figcaption>
 </figure>   
 <br><br>
@@ -365,9 +365,9 @@ PnP reprojection error (L2 pixels) as a function of temporal distance from a ref
 #### PnP, BA and LC Absolute Position Error (with respect to KITTI’s ground-truth)
 Per-frame absolute position error (in meters) after PnP (top), BA (middle) and LC (bottom), decomposed into x, y, z and Euclidean norm. The PnP function is in `slam.analysis.pnp_plot` line **91**, while the BA/LC in `slam.analysis.optimizers_analysis` line **31**.
 <figure>
-  <img src="readme_assets/pnp_abs_error.jpg" style="width:60%;">
-  <img src="readme_assets/ba_abs_error.jpg" style="width:60%;">
-  <img src="readme_assets/lc_abs_error.jpg" style="width:60%;">
+  <img src="readme_assets/pnp_abs_error.jpg" style="width:80%;">
+  <img src="readme_assets/ba_abs_error.jpg" style="width:80%;">
+  <img src="readme_assets/lc_abs_error.jpg" style="width:80%;">
   <figcaption><strong>Figure 3.3.1</strong> Per-frame absolute position error (in meters) after PnP (top), BA (middle) and LC (bottom), decomposed into x, y, z and Euclidean norm.</figcaption>
 </figure>    
 <br><br>
