@@ -1,11 +1,6 @@
 # SLAM: Final Project
 
-**Name:** Guy Shmueli  
-**I.D:** 208934273  
-**GitHub URL:** https://github.com/GuyShmueli/SLAM-GShmueli  
-
 The code is split into classes found in `slam` directory.  
-I’ve been given permission to submit alone.
 
 ---
 
