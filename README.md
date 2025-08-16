@@ -165,14 +165,12 @@ $$
 The case where we condition our parameters (what we’re trying to model) by the measurements (data) is called ‘posterior’. We wish to find the parameters $c_i, X_j$ that maximize it. That is, we actually perform MAP-estimation.
 
 By noticing that $P(z_{ij})$ does not depend on the parameters, we can drop it and use $\propto$ (proportion) instead of equality:
-- $P(c_i, X_j \mid z_{ij}) \propto P(z_{ij} \mid c_i, X_j)\, P(c_i, X_j)$.
+- $P(c_i, X_j \mid z_{ij}) \propto P(z_{ij} \mid c_i, X_j) P(c_i, X_j)$.
 
 We can now either do a Maximum-likelihood estimation, or MAP-estimation. If we do **MLE**, we can drop the prior $P(c_i, X_j)$ and obtain:
 - $P(c_i, X_j \mid z_{ij}) \propto P(z_{ij} \mid c_i, X_j)$.
 
 So the objective is:
-
-$P(c_i, X_j \mid z_{ij}) \propto P(z_{ij} \mid c_i, X_j)\, P(c_i, X_j).$
 
 
 $$
