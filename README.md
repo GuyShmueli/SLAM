@@ -114,13 +114,13 @@ That is, the optimal solution is the fourth (last) column of $V$.
 - If another subset of 4 landmarks yields more inliers (bigger mask sum), the best mask is updated.
 
 **An adaptive approach embedded in the RANSAC-loop:**  
-Denoting $w$ as the inlier-ratio $\frac{\#\text{inliers}}{\#\text{landmarks}}$, $m$ as the sample size ($m=4$) and $N$ as the number of iterations we repeat that loop.
+Denoting $w$ as the inlier-ratio $ w = \frac{\lvert\text{inliers}\rvert}{\lvert\text{landmarks}\rvert} $, $m$ as the sample size ($m=4$) and $N$ as the number of iterations we repeat that loop.
 
 - The probability the whole sample is pure inliers is $P_{\text{good}} = w^m$, hence the probability for it to be bad (at least one outlier) is $P_{\text{bad}} = 1-w^m$.
 - The probability that all $N$ iterations yield at least one outlier each time is $P_{\text{all iterations bad}} = (1-w^m)^N$. We want to find $p$ such that  
   $p \ge P_{\text{at least one iteration good}} = 1 - P_{\text{all iterations bad}} \Rightarrow p \ge 1 - (1-w^m)^N$.
 - Hence, the minimal number of iterations required to achieve $p$ is:  
-  
+  \
 
 $$
 N_{\text{req}} = \frac{\log(1-p)}{\log(1-w^m)}.
