@@ -72,7 +72,9 @@ v2 P23^T − P22^T
 )_{4×4}
 ```
 We seek $A_h X_h = 0$, where $X_h$ is exactly what we’re trying to find. The problem is that the right and left camera won’t agree with one another exactly due to real-life noise. We can do least-squares to settle that. It gives us the optimal parameters $\hat{X}_h$:
-- $\hat{X}_h = \arg\min_{\lVert X_h \rVert = 1} \lVert A_h X_h \rVert^2$
+  $$
+  \hat{X}_h = \operatorname*{arg\,min}_{\lVert X_h \rVert = 1}\; \lVert A_h X_h \rVert_2^2
+  $$
 
 We can now do an SVD-decomposition to $A_h$: $A_h = U \Sigma V^T$, where $\Sigma = \mathrm{diag}(\sigma_1 \ge \sigma_2 \ge \sigma_3 \ge \sigma_4)$. So $A_h X_h$ is equivalent to:
 - $A_h X_h = U \Sigma V^T X_h = U \Sigma (V^T X_h) = U \Sigma y = U (\sigma_1 y_1, \sigma_2 y_2, \sigma_3 y_3, \sigma_4 y_4)^T$
