@@ -174,16 +174,8 @@ So the objective is:
 
 
 $$
-\{\hat{c}_i\}_{i=1}^T, \{\hat{X}_j\}_{j=1}^M = \arg\max_{\{c_i\},\{X_j\}} \prod_{i,j} P(z_{ij} \mid c_i, X_j).
-$$
-
-
-
-Writing it as log-likelihood yields:
-
-
-$$
-\{\hat{c}_i\}_{i=1}^T, \{\hat{X}_j\}_{j=1}^M = \arg\min_{\{c_i\},\{X_j\}} \left(-\sum_{i,j} \log P(z_{ij} \mid c_i, X_j)\right) = \arg\min_{\{c_i\},\{X_j\}} \frac{1}{2} \sum_{i,j} \lVert \Delta z_{ij} \rVert_{\Sigma_{ij}}^2,
+\hat{c}_{i=1}^{T},\ \hat{X}_{j=1}^{M}
+= \arg\min_{c_i,X_j} \frac{1}{2}\sum_{i,j}\left\lVert \Delta z_{ij}\right\rVert_{\Sigma_{ij}}^{2}
 $$
 
 
