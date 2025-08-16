@@ -397,7 +397,7 @@ The orientation error is defined as the minimal rotation that aligns $R^{\text{e
 
 
 $$
-\phi_k = \arccos\!\left(\frac{\mathrm{tr}\!\left((R^{\text{gt}}_k)^T R^{\text{est}}_k\right)-1}{2}\right)\, [\deg].
+\phi_k = \arccos\left(\frac{\mathrm{tr}\left((R^{\text{gt}}_k)^T R^{\text{est}}_k\right)-1}{2}\right)\, [\deg].
 $$
 
 
