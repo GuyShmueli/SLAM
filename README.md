@@ -282,13 +282,14 @@ The code is split into classes, found in sub-directories. *(PDF p.9)*
 
 ### 3.2 Tracking Plots
 
-#### Track Length Histogram *(Figure 3.2.1 — PDF p.10)*
+#### Track Length Histogram
 Longevity of feature tracks (detection + matching + linking) across the whole sequence. `slam.backend.tracking.database` line **552**.
 
 <figure>
-  <img src="readme_assets/track_histogram.jpg" alt="Track Length Histogram" style="width:60%;">
-  <figcaption><strong>Figure 3.2.1.</strong> Track Length Histogram – longevity of feature tracks.</figcaption>
+  <img src="readme_assets/track_histogram.jpg" style="width:60%;">
+  <figcaption><strong>Figure 3.2.1.</strong> Longevity of feature tracks (detection + matching + linking) across the whole sequence.</figcaption>
 </figure>
+
 
 **What it shows:** To present the data in a meaningful way, the y-axis is logarithmic scaled due to the large ratio between \#short tracks / \#long tracks.
 
@@ -298,8 +299,14 @@ Longevity of feature tracks (detection + matching + linking) across the whole se
 - **Positive:** The system consistently generates many usable tracks. The presence of tracks of length 30–50 indicates pockets of highly stable features.  
 - **Negative:** The dominance of short lifetimes implies frequent track breakage (viewpoint change, or aggressive filtering), which limits how many constraints survive into BA.
 
-#### Per-Frame Connectivity *(Figure 3.2.2 — PDF p.11)*
+#### Per-Frame Connectivity
 A connectivity graph presenting the number of tracks on the frame with links also in the next frame. The horizontal line is the mean. `slam.backend.tracking.database` line **568**.
+
+<figure>
+  <img src="readme_assets\connectivity.jpg" alt="Track Length Histogram" style="width:60%;">
+  <figcaption><strong>Figure 3.2.2.</strong> A connectivity graph presenting the number of tracks on the frame with links also in the next frame. The horizontal line is the mean.</figcaption>
+</figure>
+
 
 **What it shows:** For each frame $t$, the number of tracks that continue to frame $t+1$. This measures tracker stability and database linking quality frame-to-frame.
 
