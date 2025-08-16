@@ -288,7 +288,7 @@ Longevity of feature tracks (detection + matching + linking) across the whole se
 <figure>
   <img src="readme_assets/track_histogram.jpg" style="width:60%;">
   <figcaption><strong>Figure 3.2.1.</strong> Longevity of feature tracks (detection + matching + linking) across the whole sequence.</figcaption>
-</figure>
+</figure>  
 
 
 **What it shows:** To present the data in a meaningful way, the y-axis is logarithmic scaled due to the large ratio between \#short tracks / \#long tracks.
@@ -303,9 +303,9 @@ Longevity of feature tracks (detection + matching + linking) across the whole se
 A connectivity graph presenting the number of tracks on the frame with links also in the next frame. The horizontal line is the mean. `slam.backend.tracking.database` line **568**.
 
 <figure>
-  <img src="readme_assets\connectivity.jpg" alt="Track Length Histogram" style="width:60%;">
+  <img src="readme_assets\connectivity.jpg" style="width:60%;">
   <figcaption><strong>Figure 3.2.2.</strong> A connectivity graph presenting the number of tracks on the frame with links also in the next frame. The horizontal line is the mean.</figcaption>
-</figure>
+</figure>    
 
 
 **What it shows:** For each frame $t$, the number of tracks that continue to frame $t+1$. This measures tracker stability and database linking quality frame-to-frame.
