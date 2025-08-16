@@ -173,10 +173,8 @@ We can now either do a Maximum-likelihood estimation, or MAP-estimation. If we d
 So the objective is:
 
 
-$$
-\hat{c}_{i=1}^{T},\ \hat{X}_{j=1}^{M}
-= \arg\min_{c_i,X_j} \frac{1}{2}\sum_{i,j}\left\lVert \Delta z_{ij}\right\rVert_{\Sigma_{ij}}^{2}
-$$
+$$\hat{c}_{i=1}^{T},\ \hat{X}_{j=1}^{M}
+= \arg\min_{c_i,X_j} \frac{1}{2}\sum_{i,j}\left\lVert \Delta z_{ij}\right\rVert_{\Sigma_{ij}}^{2}$$
 
 
 where $\Delta z_{ij} \equiv z_{ij} - \pi(c_i, X_j) = \epsilon_{ij}$, and $\lVert \Delta z_{ij} \rVert_{\Sigma}^2$ is the squared Mahalanobis-norm $\Delta z_{ij}^T \Sigma^{-1} \Delta z_{ij}$. We can see that the deterministic approach can be achieved by choosing $\Sigma$ to be the $2 \times 2$ identity matrix, hence the probabilistic approach is much more general.
