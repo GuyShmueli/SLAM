@@ -390,8 +390,13 @@ $$
   That’s why changing z-coordinate reduces the cost much less efficiently than the same-sized change in x or y.
 - **LC (bottom):** Adding loop-closure constraints anchors the trajectory globally and removes most accumulated drift. The error norm stays within a 0–5 meters range across the entire run (~10× lower than PnP peaks, ~3× lower than BA peaks). Per-axis errors mostly lie below 2 m, with small oscillations after each closure as the pose-graph re-distributes corrections.
 
-#### PnP, BA and LC Absolute Rotation Error *(Figure 3.3.2 — PDF p.15)*
+#### PnP, BA and LC Absolute Rotation Error
 Per-frame absolute orientation error after PnP, BA and LC. `slam.analysis.optimizers_analysis` line **90**.
+<figure>
+  <img src="readme_assets/abs_orientation_error.jpg" style="width:80%;">
+  <figcaption><strong>Figure 3.3.2.</strong> Per-frame absolute orientation error after PnP, BA and LC.</figcaption>
+</figure>   
+<br><br>
 
 The orientation error is defined as the minimal rotation that aligns $R^{\text{est}}_k$ to $R^{\text{gt}}_k$, and calculated as
 
