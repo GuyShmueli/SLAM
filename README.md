@@ -289,7 +289,7 @@ Longevity of feature tracks (detection + matching + linking) across the whole se
   <img src="readme_assets/track_histogram.jpg" style="width:60%;">
   <figcaption><strong>Figure 3.2.1.</strong> Longevity of feature tracks (detection + matching + linking) across the whole sequence.</figcaption>
 </figure>  
-
+<br><br>
 
 **What it shows:** To present the data in a meaningful way, the y-axis is logarithmic scaled due to the large ratio between \#short tracks / \#long tracks.
 
@@ -306,7 +306,7 @@ A connectivity graph presenting the number of tracks on the frame with links als
   <img src="readme_assets/connectivity.jpg" style="width:60%;">
   <figcaption><strong>Figure 3.2.2.</strong> A connectivity graph presenting the number of tracks on the frame with links also in the next frame. The horizontal line is the mean.</figcaption>
 </figure>    
-
+<br><br>
 
 **What it shows:** For each frame $t$, the number of tracks that continue to frame $t+1$. This measures tracker stability and database linking quality frame-to-frame.
 
@@ -322,7 +322,7 @@ Number of frame-to-frame matches before applying any geometrical outlier filteri
   <img src="readme_assets/matches_per_frame.jpg" style="width:60%;">
   <figcaption><strong>Figure 3.2.3.</strong> Number of frame-to-frame matches before applying any geometrical outlier filtering.</figcaption>
 </figure>    
-
+<br><br>
 
 **Reading the plot:** Mean around ~550 (red baseline). Wide spread (~200–1000). There is a sustained drop (~150–350) that lines up with the connectivity dip in Figure 3.2.2, followed by recovery to high-match regions later in the sequence.
 
@@ -336,8 +336,7 @@ PnP inlier percentage per frame. `slam.backend.tracking.fill_database` line **26
   <img src="readme_assets/inliers_per_frame.jpg" style="width:60%;">
   <figcaption><strong>Figure 3.2.4.</strong> PnP inlier percentage per frame.</figcaption>
 </figure>    
-
-
+<br><br>
 
 **What it shows:** Geometric verification quality based on two tests:  
 I. Stereo condition (approximately the same image y-coordinate).  
@@ -354,8 +353,8 @@ PnP reprojection error (L2 pixels) as a function of temporal distance from a ref
 <figure>
   <img src="readme_assets/inliers_per_frame.jpg" style="width:60%;">
   <figcaption><strong>Figure 3.2.5.</strong> PnP reprojection error (L2 pixels) as a function of temporal distance from a reference frame (an arbitrary track of length 40 was chosen), plotted for the left/right cameras separately.</figcaption>
-</figure>    
-
+</figure>   
+<br><br>
 
 **Reading the plot:** Error grows almost monotonically all along the track, for both cameras.
 
@@ -369,10 +368,9 @@ Per-frame absolute position error (in meters) after PnP (top), BA (middle) and L
   <img src="readme_assets/pnp_abs_error.jpg" style="width:60%;">
   <img src="readme_assets/ba_abs_error.jpg" style="width:60%;">
   <img src="readme_assets/lc_abs_error.jpg" style="width:60%;">
-  <figcaption><strong>Figure 3.2.5.</strong> PnP reprojection error (L2 pixels) as a function of temporal distance from a reference frame (an arbitrary track of length 40 was chosen), plotted for the left/right cameras separately.</figcaption>
+  <figcaption><strong>Figure 3.3.1</strong> Per-frame absolute position error (in meters) after PnP (top), BA (middle) and LC (bottom), decomposed into x, y, z and Euclidean norm.</figcaption>
 </figure>    
-
-
+<br><br>
 
 **What’s plotted & how it’s computed:**  
 For each frame $i$, compare the estimated camera center $C^{\text{est}}_i$ to the KITTI ground-truth center $C^{\text{gt}}_i$ in the world frame and report the component-wise absolute translation errors $\lVert e_{x,i} \rVert, \lVert e_{y,i} \rVert, \lVert e_{z,i} \rVert$ and the Euclidean norm $\lVert e_i \rVert$, where $e_i = C^{\text{est}}_i - C^{\text{gt}}_i$ (meters).
