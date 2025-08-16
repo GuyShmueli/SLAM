@@ -2,9 +2,8 @@
 
 **Name:** Guy Shmueli  
 **I.D:** 208934273  
-**GitHub URL:** <https://github.com/GuyShmueli/SLAM-GShmueli>  
+**GitHub URL:** <https://github.com/GuyShmueli/SLAM>  
 **Note:** The code is split into classes found in the `slam` directory.  
-**Permission:** I’ve been given permission to submit alone.
 
 ---
 
@@ -48,7 +47,7 @@ Some concrete examples:
 ### 1.3 Algorithms
 
 #### 1.3.1 Triangulation
-- **Objective:** Reconstruct a 3D point \(\mathbf{X} = (p_x, p_y, p_z)^T\) corresponding to a pixel \(\mathbf{x} = (u, v)^T\) in an image.
+- **Objective:** Reconstruct a 3D point \(X=(p_x, p_y, p_z)^\top\) corresponding to a pixel \(\mathbf{x} = (u, v)^T\) in an image.
 - **Challenge:** According to projective geometry, a pixel from a single image can be mapped into a ray, not to a single point.
 - **Solution:** We use a rectified stereo-pair, so we can compute \(p_z\) while also maintaining geometric inliers by using \(v_L = v_R\) validation.
 - **Input:** 2 pixels \(\mathbf{x}_L, \mathbf{x}_R\) representing the same landmark in a stereo-camera alongside their camera matrix.
