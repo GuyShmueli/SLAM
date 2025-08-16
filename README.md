@@ -303,7 +303,7 @@ Longevity of feature tracks (detection + matching + linking) across the whole se
 A connectivity graph presenting the number of tracks on the frame with links also in the next frame. The horizontal line is the mean. `slam.backend.tracking.database` line **568**.
 
 <figure>
-  <img src="readme_assets\connectivity.jpg" style="width:60%;">
+  <img src="readme_assets/connectivity.jpg" style="width:60%;">
   <figcaption><strong>Figure 3.2.2.</strong> A connectivity graph presenting the number of tracks on the frame with links also in the next frame. The horizontal line is the mean.</figcaption>
 </figure>    
 
@@ -316,8 +316,13 @@ A connectivity graph presenting the number of tracks on the frame with links als
 - **Positive:** Sustained mid-high connectivity across most of the run, which yields enough constraints to propagate downstream to PnP/BA.  
 - **Negative:** There are a few dips which demonstrate weaker constraints and more drift risk (or even ill-posed problem).
 
-#### Number of matches per Frame *(Figure 3.2.3 — PDF p.11)*
+#### Number of matches per Frame
 Number of frame-to-frame matches before applying any geometrical outlier filtering. `slam.backend.tracking.fill_database` line **262**.
+<figure>
+  <img src="readme_assets/matches_per_frame.jpg" style="width:60%;">
+  <figcaption><strong>Figure 3.2.3.</strong> Number of frame-to-frame matches before applying any geometrical outlier filtering.</figcaption>
+</figure>    
+
 
 **Reading the plot:** Mean around ~550 (red baseline). Wide spread (~200–1000). There is a sustained drop (~150–350) that lines up with the connectivity dip in Figure 3.2.2, followed by recovery to high-match regions later in the sequence.
 
@@ -325,8 +330,14 @@ Number of frame-to-frame matches before applying any geometrical outlier filteri
 - **Positive:** The system usually produces a high volume of matches, supporting stable RANSAC-PnP.  
 - **Negative:** The slumps are bottlenecks, fewer reliable matches lead to fewer verified inliers, which lead to shakier poses.
 
-#### Percentage of PnP Inliers per Frame *(Figure 3.2.4 — PDF p.12)*
+#### Percentage of PnP Inliers per Frame
 PnP inlier percentage per frame. `slam.backend.tracking.fill_database` line **262**.
+<figure>
+  <img src="readme_assets/inliers_per_frame.jpg" style="width:60%;">
+  <figcaption><strong>Figure 3.2.4.</strong> PnP inlier percentage per frame.</figcaption>
+</figure>    
+
+
 
 **What it shows:** Geometric verification quality based on two tests:  
 I. Stereo condition (approximately the same image y-coordinate).  
@@ -338,8 +349,13 @@ II. RANSAC-PnP (as explained in 1.3.2).
 - **Positive:** A stable, high inlier rate over thousands of frames indicates good outlier rejection, and broadly consistent scene geometry.  
 - **Negative:** Dips show where PnP gets less reliable, as in previous figures.
 
-#### PnP Reprojection Error vs. Distance from Reference *(Figure 3.2.5 — PDF p.13)*
+#### PnP Reprojection Error vs. Distance from Reference
 PnP reprojection error (L2 pixels) as a function of temporal distance from a reference frame (an arbitrary track of length 40 was chosen), plotted for the left/right cameras separately. `slam.analysis.pnp_plot` line **72**.
+<figure>
+  <img src="readme_assets/inliers_per_frame.jpg" style="width:60%;">
+  <figcaption><strong>Figure 3.2.5.</strong> PnP reprojection error (L2 pixels) as a function of temporal distance from a reference frame (an arbitrary track of length 40 was chosen), plotted for the left/right cameras separately.</figcaption>
+</figure>    
+
 
 **Reading the plot:** Error grows almost monotonically all along the track, for both cameras.
 
